@@ -5,6 +5,7 @@ GET http://127.0.0.1:8000/products/ HTTP/1.1
 
 POST http://127.0.0.1:8000/products/ HTTP/1.1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg5OTk1MDk1LCJpYXQiOjE3ODk5OTQ3OTUsImp0aSI6IjVjMmQwZTJkMGZkOTQ4NjQ5OWQxNGFhYmFlNDY1NjIzIiwidXNlcl9pZCI6IjEifQ.t5zZmf-9HRCtcc7OrSu0Ss8NhIL2sGwuU9do3PVCc7k
 
 {
     "description": "omer",
@@ -12,3 +13,19 @@ Content-Type: application/json
     "price": "20.00",
     "stock": 0
 }
+
+
+######
+POST http://127.0.0.1:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "test"
+}
+
+
+
+######
+GET http://127.0.0.1:8000/user-orders/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg5OTk2MjA5LCJpYXQiOjE3ODk5OTU5MDksImp0aSI6IjkyZTdlNjYxMTJmNDQzNGU4NDYyYjExZjM2ZGRiYjBlIiwidXNlcl9pZCI6IjEifQ.nM-YpZuzsTG22M0jQw2xbsWb6crmPwH55LP6J_RO9R8
