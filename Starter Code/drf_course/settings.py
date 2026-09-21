@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'silk',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -122,5 +123,14 @@ REST_FRAMEWORK = {
        
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-    ]
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Products API',
+    'DESCRIPTION': 'API for managing products',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
 }
