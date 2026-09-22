@@ -10,12 +10,13 @@ from rest_framework.views import APIView
 from api.filters import ProductFilter
 from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
+from api.filters import InStockFilterBackend
 
 class ProductListAPIView(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filterset_class = ProductFilter
-    filter_backends = [DjangoFilterBackend , filters.SearchFilter ,filters.OrderingFilter]
+    filter_backends = [DjangoFilterBackend , filters.SearchFilter ,filters.OrderingFilter, InStockFilterBackend]
     search_fields = ['name' , 'description']
     ordering_fieds = ['name', 'price', 'stock']
 
